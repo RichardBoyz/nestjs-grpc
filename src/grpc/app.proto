@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package app;
+
+service Rpc {
+  rpc AddUser (UserData) returns (CreatedUser);
+  rpc getUser (GetUserByName) returns (GetUserData);
+}
+
+message UserData {
+  string name=1;
+  int32 age=2;
+}
+
+message CreatedUser {
+  string name = 1;
+  int32 age=2;
+}
+
+message GetUserByName {
+  string name=1;
+}
+
+message GetUserData{
+  string name=1;
+  int32 age=2;
+}
